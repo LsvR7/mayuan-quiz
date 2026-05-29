@@ -1,0 +1,63 @@
+{
+    "generatedAt":  "2026-05-21T01:58:10",
+    "sourceDir":  "C:\\Users\\MMM\\Desktop\\马原背题\\原理2024-2025-2年题库更新",
+    "totalQuestions":  1091,
+    "files":  [
+                  {
+                      "file":  "导论.doc",
+                      "declaredTotal":  28,
+                      "answerMarkers":  28,
+                      "parsed":  28,
+                      "ok":  true
+                  },
+                  {
+                      "file":  "第二章 实践与认识及其发展规律.doc",
+                      "declaredTotal":  240,
+                      "answerMarkers":  240,
+                      "parsed":  240,
+                      "ok":  true
+                  },
+                  {
+                      "file":  "第六章   社会主义的发展及其规律.docx",
+                      "declaredTotal":  10,
+                      "answerMarkers":  8,
+                      "parsed":  8,
+                      "ok":  true
+                  },
+                  {
+                      "file":  "第七章 共产主义崇高理想及其最终实现.docx",
+                      "declaredTotal":  10,
+                      "answerMarkers":  5,
+                      "parsed":  5,
+                      "ok":  true
+                  },
+                  {
+                      "file":  "第三章 人类社会及其发展规律.doc",
+                      "declaredTotal":  26,
+                      "answerMarkers":  26,
+                      "parsed":  26,
+                      "ok":  true
+                  },
+                  {
+                      "file":  "第四章  资本主义的本质及规律.docx",
+                      "declaredTotal":  223,
+                      "answerMarkers":  217,
+                      "parsed":  217,
+                      "ok":  true
+                  },
+                  {
+                      "file":  "第五章  资本主义的发展及其趋势.doc",
+                      "declaredTotal":  24,
+                      "answerMarkers":  24,
+                      "parsed":  24,
+                      "ok":  true
+                  },
+                  {
+                      "file":  "第一章 世界的物质性及其发展规律.doc",
+                      "declaredTotal":  543,
+                      "answerMarkers":  543,
+                      "parsed":  543,
+                      "ok":  true
+                  }
+              ]
+}

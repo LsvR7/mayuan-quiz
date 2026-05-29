@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>马原背题</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="topbar">
+      <div>
+        <p class="eyebrow">马克思主义基本原理题库</p>
+        <h1>马原背题</h1>
+      </div>
+      <div class="stats" aria-live="polite">
+        <span id="totalCount">0 题</span>
+        <span id="wrongCount">错题 0</span>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="复习设置">
+      <label>
+        模式
+        <select id="modeSelect">
+          <option value="study">背题模式</option>
+          <option value="quiz">做题模式</option>
+          <option value="wrong">错题重练</option>
+        </select>
+      </label>
+      <label>
+        章节
+        <select id="chapterSelect"></select>
+      </label>
+      <label>
+        题型
+        <select id="typeSelect">
+          <option value="all">全部题型</option>
+          <option value="single">单项选择</option>
+          <option value="multiple">多项选择</option>
+          <option value="judge">判断题</option>
+        </select>
+      </label>
+      <label>
+        从第几题开始
+        <input id="startInput" type="number" min="1" value="1" inputmode="numeric">
+      </label>
+      <button id="jumpButton" type="button">跳转</button>
+    </section>
+
+    <section class="question-panel" aria-live="polite">
+      <div class="question-meta">
+        <span id="positionText">第 0 / 0 题</span>
+        <span id="tagText"></span>
+      </div>
+      <h2 id="questionText">正在载入题库...</h2>
+      <form id="answerForm" class="options"></form>
+      <div id="answerPanel" class="answer-panel hidden"></div>
+      <div class="actions">
+        <button id="prevButton" type="button">上一题</button>
+        <button id="submitButton" type="button">提交答案</button>
+        <button id="showAnswerButton" type="button">显示答案</button>
+        <button id="nextButton" type="button">下一题</button>
+      </div>
+    </section>
+
+    <section class="progress-panel">
+      <div>
+        <h2>复习记录</h2>
+        <p id="historyText">还没有作答记录。</p>
+      </div>
+      <div class="danger-actions">
+        <button id="clearProgressButton" type="button">清空当前进度</button>
+        <button id="clearWrongButton" type="button">清空错题记录</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
