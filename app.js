@@ -82,6 +82,7 @@
     els.prevButton.addEventListener('click', () => move(-1));
     els.nextButton.addEventListener('click', () => move(1));
     els.submitButton.addEventListener('click', submitAnswer);
+    els.answerForm.addEventListener('change', submitSingleChoiceOnSelect);
     els.showAnswerButton.addEventListener('click', () => showAnswer());
     els.clearProgressButton.addEventListener('click', clearProgress);
     els.clearWrongButton.addEventListener('click', clearWrong);
@@ -192,6 +193,13 @@
     els.wrongCount.textContent = `错题 ${Object.keys(state.wrong).length}`;
   }
 
+  function submitSingleChoiceOnSelect() {
+    if (!filtered.length || submitted || state.filters.mode === 'study') { return; }
+    const q = filtered[currentIndex];
+    if (q.type === 'multiple') { return; }
+    submitAnswer();
+  }
+
   function getSelectedAnswers() {
     return [...els.answerForm.querySelectorAll('input:checked')]
       .map((input) => input.value)
@@ -264,9 +272,14 @@
 
   function updateButtons() {
     const hasQuestions = filtered.length > 0;
+    const q = hasQuestions ? filtered[currentIndex] : null;
+    const needsManualSubmit = q && q.type === 'multiple' && state.filters.mode !== 'study';
     els.prevButton.disabled = !hasQuestions || currentIndex === 0;
     els.nextButton.disabled = !hasQuestions || currentIndex >= filtered.length - 1;
-    els.submitButton.disabled = !hasQuestions || state.filters.mode === 'study' || submitted;
+    els.submitButton.textContent = state.filters.mode !== 'study' && q && q.type !== 'multiple'
+      ? '点击选项后自动判题'
+      : '提交答案';
+    els.submitButton.disabled = !hasQuestions || state.filters.mode === 'study' || submitted || !needsManualSubmit;
     els.showAnswerButton.disabled = !hasQuestions || state.filters.mode === 'study';
   }
 
